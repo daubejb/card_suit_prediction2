@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Card Suit Prediction 2</string>
+    <string name="suitView">You will choose Clubs</string>
 </resources>
