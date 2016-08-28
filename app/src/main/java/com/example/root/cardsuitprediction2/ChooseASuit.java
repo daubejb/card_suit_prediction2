@@ -8,15 +8,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ChooseASuit extends AppCompatActivity implements SensorEventListener {
 
-    private final float NOISE = (float) 15.0;
+    private final float NOISE = (float) 10.0;
     private boolean mInitialized; // used for initializing sensor only once
     private SensorManager mSensorManager;
     private Sensor mSensor;
-    TextView suitView;
+    private ImageView suitImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +27,17 @@ public class ChooseASuit extends AppCompatActivity implements SensorEventListene
 
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        suitView = (TextView) findViewById(R.id.suittextview);
-        suitView.setVisibility(View.INVISIBLE);
+        suitImageView = (ImageView) findViewById(R.id.clubsImageView);
+        suitImageView.setVisibility(View.INVISIBLE);
 
         Button clubsButton = (Button)findViewById(R.id.clubsbutton);
 
         clubsButton.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick (View v) {
-                        suitView.setText("YOU WILL CHOOSE CLUBS");
-                        suitView.setVisibility(View.VISIBLE);
+                        suitImageView = (ImageView) findViewById(R.id.clubsImageView);
+                        suitImageView.setVisibility(View.VISIBLE);
+
                     }
                 }
         );
@@ -45,8 +47,7 @@ public class ChooseASuit extends AppCompatActivity implements SensorEventListene
         resetButton.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick (View v) {
-                        suitView.setText("YOU WILL CHOOSE CLUBS");
-                        suitView.setVisibility(View.INVISIBLE);
+                        suitImageView.setVisibility(View.INVISIBLE);
                     }
                 }
         );
@@ -124,17 +125,20 @@ public class ChooseASuit extends AppCompatActivity implements SensorEventListene
 
 
             if (deltaX > deltaY) {
-                suitView.setText("YOU WILL CHOOSE HEARTS");
-                suitView.setVisibility(View.VISIBLE);
+                suitImageView.setVisibility(View.INVISIBLE);
+                suitImageView = (ImageView) findViewById(R.id.heartsImageView);
+                suitImageView.setVisibility(View.VISIBLE);
 
             } else if (deltaY > deltaX) {
-                suitView.setText("YOU WILL CHOOSE SPADES");
-                suitView.setVisibility(View.VISIBLE);
+                suitImageView.setVisibility(View.INVISIBLE);
+                suitImageView = (ImageView) findViewById(R.id.spadesImageView);
+                suitImageView.setVisibility(View.VISIBLE);
 
             } else if ((deltaZ > deltaX) && (deltaZ > deltaY)) {
                 // Z shake
-                suitView.setText("YOU WILL CHOOSE DIAMONDS");
-                suitView.setVisibility(View.VISIBLE);
+                suitImageView.setVisibility(View.INVISIBLE);
+                suitImageView = (ImageView) findViewById(R.id.diamondsImageView);
+                suitImageView.setVisibility(View.VISIBLE);
 
             }
 

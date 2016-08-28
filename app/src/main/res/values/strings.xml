@@ -3,4 +3,8 @@
     <string name="suitView">You will choose Clubs</string>
     <string name="reset">reset</string>
     <string name="clubsButtonText">Spades</string>
+    <string name="clubsImageViewDescription">Image of a Club</string>
+    <string name="heartsImageViewDescription">Image of a Heart</string>
+    <string name="spadesImageViewDescription">Image of a Spade</string>
+    <string name="diamondsImageViewDescription">Image of a Diamond</string>
 </resources>

@@ -47,4 +47,40 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/heartsImageView"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:src="@drawable/hearts"
+        android:contentDescription="@string/heartsImageViewDescription" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/diamondsImageView"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:src="@drawable/diamonds"
+        android:contentDescription="@string/diamondsImageViewDescription" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spadesImageView"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:src="@drawable/spades"
+        android:contentDescription="@string/spadesImageViewDescription" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/clubsImageView"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:src="@drawable/clubs"
+        android:contentDescription="@string/clubsImageViewDescription" />
+
 </RelativeLayout>
