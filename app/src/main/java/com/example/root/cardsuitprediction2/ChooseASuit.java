@@ -13,7 +13,10 @@ import android.widget.TextView;
 
 public class ChooseASuit extends AppCompatActivity implements SensorEventListener {
 
-    private final float NOISE = (float) 10.0;
+    private final float XNOISE = (float) 7.0;
+    private final float YNOISE = (float) 6.0;
+    private final float ZNOISE = (float) 16.0;
+
     private boolean mInitialized; // used for initializing sensor only once
     private SensorManager mSensorManager;
     private Sensor mSensor;
@@ -112,11 +115,11 @@ public class ChooseASuit extends AppCompatActivity implements SensorEventListene
             double deltaX = Math.abs(mLastX - x);
             double deltaY = Math.abs(mLastY - y);
             double deltaZ = Math.abs(mLastZ - z);
-            if (deltaX < NOISE)
+            if (deltaX < XNOISE)
                 deltaX = (float) 0.0;
-            if (deltaY < NOISE)
+            if (deltaY < YNOISE)
                 deltaY = (float) 0.0;
-            if (deltaZ < NOISE)
+            if (deltaZ < ZNOISE)
                 deltaZ = (float) 0.0;
 
             mLastX = x;
